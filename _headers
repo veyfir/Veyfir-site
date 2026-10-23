@@ -1,0 +1,7 @@
+/updates/macos/appcast.xml
+  Content-Type: application/xml; charset=utf-8
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/downloads/macos/*
+  Cache-Control: public, max-age=31536000, immutable
+  Content-Disposition: attachment
