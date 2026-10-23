@@ -8,7 +8,7 @@ window.VEYFIR_CONFIG = {
   emailjs: {
     publicKey: '', // https://dashboard.emailjs.com/admin/account
     serviceId: '', // EmailJS Email Services
-    templateId: '' // EmailJS Email Templates (create a Veyfir template)
+    templateId: 'template_to5wanz' // EmailJS Email Templates (create a Veyfir template)
   },
   supportEmail: '' // Optional: fallback opens user's email application via mailto
 };
