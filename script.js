@@ -110,7 +110,7 @@
     const configured = config.downloads?.[platform];
     // A real HTTPS release or same-site relative installer path can be configured.
     const safe = typeof configured === 'string' && (
-      /^https:\/\//i.test(configured) || /^(?!\/\/|[a-z]+:)[\w./-]+$/i.test(configured)
+      /^https:\/\//i.test(configured) || /^(?!\/\/|[a-z]+:)(?:[\w./-]|%[0-9a-f]{2})+$/i.test(configured)
     );
     if (safe) link.href = configured;
     else link.addEventListener('click', (event) => {
