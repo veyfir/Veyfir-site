@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#09130e">
+  <meta name="description" content="Veyfir — lightweight game capture for Windows and macOS. No ads, no bloat. Save your best moments.">
+  <title>Veyfir — Game capture, simplified.</title>
+  <link rel="icon" href="assets/app-icon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="config.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="page-container header-inner">
+      <a class="brand" href="#top" aria-label="Veyfir, back to top">
+        <img class="brand-mark" src="assets/veyfir-mark-flat.svg" alt="" width="54" height="54">
+        <span>VEYFIR</span>
+      </a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#features">Features</a>
+        <a href="#support">Support</a>
+        <button type="button" class="nav-contact open-report">Contact</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="main-title">
+      <svg class="flow-lines" id="flow-lines" viewBox="0 0 1600 860" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+        <defs><linearGradient id="flow-reveal"><stop offset="28%" stop-color="black"/><stop offset="47%" stop-color="white"/></linearGradient><mask id="flow-mask"><rect width="1600" height="860" fill="url(#flow-reveal)"/></mask></defs>
+        <g id="upper-flow" class="upper-flow" mask="url(#flow-mask)"></g>
+        <g id="lower-flow" class="lower-flow"></g>
+      </svg>
+      <div class="page-container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">GAME CAPTURE, SIMPLIFIED</p>
+          <h1 id="main-title">Veyfir<span class="headline-sub">Capture more<br>of what matters.</span></h1>
+          <p class="hero-desc">A fast, lightweight desktop recorder for gamers.<br class="wide-only"> Save your best moments, effortlessly.</p>
+          <div class="download-actions" id="download">
+            <a href="#download" class="download-btn windows" id="windows-download" data-download="windows">
+              <svg class="platform-icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M2 5.5 10.6 4v7.6H2V5.5zm10-1.7L22 2.3v9.3H12V3.8zM2 13h8.6v7.5L2 19v-6zm10 0h10v9.1L12 20.6V13z"/></svg>
+              <span>Download for Windows</span><span class="btn-arrow" aria-hidden="true">→</span>
+            </a>
+            <a href="#download" class="download-btn macos" id="mac-download" data-download="mac">
+              <svg class="platform-icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M17.33 12.67c.03 2.65 2.35 3.54 2.38 3.55-.02.06-.37 1.26-1.23 2.51-.75 1.08-1.53 2.16-2.76 2.19-1.2.02-1.58-.71-2.95-.71-1.36 0-1.79.69-2.92.73-1.2.05-2.11-1.2-2.86-2.28-1.55-2.2-2.72-6.24-1.14-8.95a4.43 4.43 0 0 1 3.73-2.3c1.16-.03 2.26.78 2.97.78.7 0 2.02-.96 3.41-.82.58.02 2.21.23 3.25 1.78-.08.04-1.94 1.13-1.88 3.52ZM15.24 5.7A4.36 4.36 0 0 0 16.26 2a4.44 4.44 0 0 0-2.9 1.76 4.16 4.16 0 0 0-1.05 3.12c1.08.08 2.19-.53 2.93-1.18Z"/></svg>
+              <span>Download for macOS</span><span class="btn-arrow" aria-hidden="true">→</span>
+            </a>
+            <button class="bug-btn open-report" type="button">
+              <svg class="bug-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="8" width="10" height="12" rx="5"/><path d="M9 8V5a3 3 0 0 1 6 0v3M4 9l3 2m13-2-3 2M3 16h4m10 0h4M5 21l3-3m11 3-3-3M12 9v10"/></svg>
+              Report a bug
+            </button>
+          </div>
+          <p class="download-feedback" id="download-feedback" aria-live="polite" role="status"></p>
+        </div>
+
+        <div class="product-visual" aria-label="Veyfir Capture preview">
+          <div class="shutter" aria-hidden="true">
+            <svg id="shutter-svg" viewBox="-180 -180 360 360" role="img" focusable="false">
+              <defs><clipPath id="iris-cutoff"><circle r="131"/></clipPath></defs>
+              <circle class="iris-outer" r="153"/>
+              <circle class="iris-outer iris-second" r="144"/>
+              <g id="iris-rotor" clip-path="url(#iris-cutoff)"><g id="iris-blades"></g></g>
+              <circle class="iris-inner" r="131"/>
+            </svg>
+            <div class="shutter-logo"><img src="assets/veyfir-mark-flat.svg" alt="" width="128" height="128"></div>
+          </div>
+          <div class="window-preview" id="preview">
+            <div class="windows-titlebar" aria-hidden="true">
+              <div class="window-app-name"><img src="assets/veyfir-mark.png" alt="" width="17" height="17"><span>Veyfir</span></div>
+              <div class="windows-controls"><span class="control-minimize"><i></i></span><span class="control-maximize"><i></i></span><span class="control-close"><i></i><b></b></span></div>
+            </div>
+            <img class="capture-screen" src="assets/capture-preview.webp" width="2048" height="1242" alt="Screenshot of the Veyfir Capture screen with its replay buffer and one-click controls">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features-section page-container" id="features" aria-label="Veyfir features">
+      <div class="features-grid">
+        <article class="feature-item">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M9 11h14c3 0 5 2 6 5l1 7c.4 3-2.7 4.6-4.7 2.5L21 21H11l-4.3 4.5C4.7 27.6 1.6 26 2 23l1-7c1-3 3-5 6-5Z"/><path d="M8 15v7M4.5 18.5h7M21 16h.01M25 19h.01"/></svg>
+          <h2>Simple game capture</h2><p>Set up in seconds.<br>Start recording.</p>
+        </article>
+        <article class="feature-item">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="7" y="7" width="18" height="18" rx="2"/><path d="M12 2v5m8-5v5M12 25v5m8-5v5M2 12h5m-5 8h5m18-8h5m-5 8h5"/><text x="16" y="19.6" text-anchor="middle" font-size="9" fill="currentColor" stroke="none" font-family="monospace">CPU</text></svg>
+          <h2>Low CPU usage</h2><p>Made to stay light.<br>Keep your FPS.</p>
+        </article>
+        <article class="feature-item">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13"/><path d="m7 7 18 18"/></svg>
+          <h2>No ads</h2><p>No ads. No bloat.<br>Just capture.</p>
+        </article>
+        <article class="feature-item">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="m16 3 13 7-13 7-13-7 13-7Zm-13 13 13 7 13-7M3 22l13 7 13-7"/></svg>
+          <h2>Replay buffer</h2><p>Never miss a moment.<br>Save it later.</p>
+        </article>
+        <article class="feature-item">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13"/><path d="m13 10 9 6-9 6V10Z"/></svg>
+          <h2>Quick clip export</h2><p>Trim your highlights.<br>Export with ease.</p>
+        </article>
+        <article class="feature-item feature-support">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="7" width="26" height="18" rx="2"/><path d="m4 9 12 9L28 9"/></svg>
+          <h2>Report issues</h2><p>Found a bug?<br><button type="button" class="inline-report open-report">Let us know ↗</button></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="support-section page-container" id="support">
+      <span class="small-label">SUPPORT / VEYFIR</span>
+      <div><h2>Found a bug?</h2><p>Tell us what happened and help make Veyfir better.</p></div>
+      <button type="button" class="support-cta open-report">Report an issue <span aria-hidden="true">↗</span></button>
+    </section>
+  </main>
+
+  <footer class="site-footer page-container">
+    <span>© <span id="year">2026</span> Veyfir</span><span>Game capture, simplified.</span>
+  </footer>
+
+  <dialog id="bug-dialog" aria-labelledby="dialog-heading">
+    <div class="dialog-heading-row"><span class="small-label">VEYFIR / SUPPORT</span><button type="button" class="close-dialog" id="close-dialog" aria-label="Close bug report">×</button></div>
+    <h2 id="dialog-heading">Report a bug.</h2>
+    <p>Something not working? Describe it below.</p>
+    <form id="bug-form">
+      <label>Your email<input type="email" name="email" placeholder="name@example.com" autocomplete="email" required maxlength="254"></label>
+      <label>Operating system<select name="platform" required><option value="">Select your platform</option><option value="Windows">Windows</option><option value="macOS">macOS</option></select></label>
+      <label>What happened?<textarea name="message" placeholder="What went wrong? How can we reproduce it?" required rows="5" minlength="10" maxlength="4000"></textarea></label>
+      <div class="honeypot" aria-hidden="true"><label>Company<input type="text" name="company" tabindex="-1" autocomplete="off"></label></div>
+      <button type="submit" class="send-report">Send report <span aria-hidden="true">↗</span></button>
+      <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+    </form>
+  </dialog>
+</body>
+</html>
