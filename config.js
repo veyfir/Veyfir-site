@@ -2,7 +2,7 @@
 // Leave a download link empty if the installer has not been published yet.
 window.VEYFIR_CONFIG = {
   downloads: {
-    windows: 'downloads/Veyfir-Setup-0.4.3-Windows-x64.exe',
+    windows: 'downloads/Veyfir-Setup.exe',
     mac: 'downloads/macos/Veyfir-0.3.5.dmg'
   },
   emailjs: {
