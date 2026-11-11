@@ -3,7 +3,7 @@
 window.VEYFIR_CONFIG = {
   downloads: {
     windows: 'downloads/Veyfir-Setup-0.4.3-Windows-x64.exe',
-    mac: ''      // e.g. https://github.com/your-account/veyfir/releases/download/v1.0/Veyfir.dmg
+    mac: 'downloads/macos/Veyfir-0.3.5.dmg'
   },
   emailjs: {
     publicKey: '_klPEPRqu4qGtVLNg', // https://dashboard.emailjs.com/admin/account
